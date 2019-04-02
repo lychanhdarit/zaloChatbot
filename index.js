@@ -23,7 +23,7 @@ app.post('/webhook/',function(req,res){
 app.get('/webhook/',(req,res)=>{
 	console.log(JSON.stringify(req.query));
     console.log("Query: "+req.query);
-	replyMessage('7469704234848807541');
+	replyMessageServer('7469704234848807541',"Query: "+req.query.event);
 	
 	//var userId = '84964900534';
 		//ZOAClient.api('getprofile', { uid: userId }, function(response) {
@@ -51,7 +51,12 @@ function replyMessage(userId){
 	console.log(JSON.stringify(response));
     })
 }
-
+function replyMessageServer(userId,message){ 
+    ZOAClient.api('sendmessage/text', 'POST', {uid: userId, message: message}, function(response) {
+	console.log("Query 2: "+response);
+	console.log(JSON.stringify(response));
+    })
+}
 app.listen(app.get('port'),()=>{
     console.log("running: "+ app.get('port'));
 })
