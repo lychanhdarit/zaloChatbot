@@ -45,7 +45,7 @@ app.get('/',(req,res)=>{
 function saveDataFollow(userId){
 	ZOAClient.api('getprofile', { uid: userId }, function(response) {
 		var dataRespone = response.data;
-		var data = {userGender:dataRespone.userGender+'',userId:dataRespone.userId+'',displayName:dataRespone.displayName,avatar:dataRespone.avatar};
+		var data = {userGender:dataRespone.userGender+'',userId:dataRespone.userId+'',displayName:dataRespone.displayName,avatar:dataRespone.avatar,birthDay:dataRespone.birthDay+''};
         const xhr = new XMLHttpRequest();
         xhr.open('post', 'http://zalo.vinasave.com/api/customerInsert', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
