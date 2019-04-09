@@ -71,7 +71,7 @@ function replyMessage(userId){
     })
 }
 function replyMessageFollower(userId){ 
-    ZOAClient.api('sendmessage/text', 'POST', {uid: userId, message: 'Xin chúc mừng quý khách đã nhận được mã giảm giá 10% dành riêng cho khách hàng quan tâm VINASAVE trên Zalo trong tháng 4/2019.\n\nMã giảm giá của bạn: ZaloVNS (Áp dụng đến hết 30/4/2019) \n\nXem sản phẩm mới nhất trên website tại đây: http://bit.ly/2VaZvEQ'}, function(response) {
+    ZOAClient.api('sendmessage/text', 'POST', {uid: userId, message: 'Xin chúc mừng quý khách đã nhận được mã giảm giá 10% dành riêng cho khách hàng quan tâm VINASAVE trên Zalo trong tháng 4/2019.\n\nMã giảm giá của bạn: ZaloVNS (Áp dụng đến hết 30/4/2019) \n\nNhập mã khi mua hàng online tại website: http://bit.ly/2VaZvEQ'}, function(response) {
 		console.log("Send message: "+response); 
 	}); 
 	saveDataFollow(userId);
